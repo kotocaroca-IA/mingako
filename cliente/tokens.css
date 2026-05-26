@@ -1,137 +1,198 @@
-/* ─── Ciclo17 / Calculadora — Design Tokens ─────────────── */
-/* Self-contained: import this file inside any project to get
-   the full Ciclo17 brand system without external dependencies */
+/* ─── Mingako — Design Tokens ────────────────────────────── */
+/* Identidad de marca: natural · orgánica · comunitaria · cálida */
+/* Self-contained: importar este archivo en cualquier proyecto  */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300..900;1,300..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-	/* Typography */
-	--font-headline: 'Space Grotesk', sans-serif;
-	--font-body:     'DM Sans', sans-serif;
+	/* ── Tipografía ── */
+	/* Nunito: redondeada, amigable, moderna — evoca comunidad y cercanía */
+	--font-headline: 'Nunito', sans-serif;
+	--font-body:     'Nunito Sans', sans-serif;
 	--font-mono:     'Space Mono', monospace;
 
-	/* ── Type Scale (Major Third 1.25) ── */
-	--text-xs:   clamp(0.7rem, 0.68rem + 0.1vw, 0.75rem);
-	--text-sm:   clamp(0.8rem, 0.77rem + 0.15vw, 0.875rem);
+	/* ── Escala tipográfica (Major Third 1.25) ── */
+	--text-xs:   clamp(0.7rem,  0.68rem + 0.10vw, 0.75rem);
+	--text-sm:   clamp(0.8rem,  0.77rem + 0.15vw, 0.875rem);
 	--text-base: 1rem;
-	--text-lg:   clamp(1.15rem, 1.05rem + 0.5vw, 1.25rem);
-	--text-xl:   clamp(1.4rem, 1.2rem + 1vw, 1.5rem);
-	--text-2xl:  clamp(1.75rem, 1.4rem + 1.75vw, 2.5rem);
-	--text-3xl:  clamp(2rem, 1.5rem + 2.5vw, 3rem);
-	--text-hero: clamp(2.75rem, 1.8rem + 4.75vw, 5rem);
+	--text-lg:   clamp(1.15rem, 1.05rem + 0.50vw, 1.25rem);
+	--text-xl:   clamp(1.40rem, 1.20rem + 1.00vw, 1.56rem);
+	--text-2xl:  clamp(1.75rem, 1.40rem + 1.75vw, 2.50rem);
+	--text-3xl:  clamp(2.00rem, 1.50rem + 2.50vw, 3.20rem);
+	--text-hero: clamp(2.75rem, 1.80rem + 4.75vw, 5.00rem);
 
-	/* ── Spacing (8px base) ── */
-	--space-1: 4px;   --space-2: 8px;   --space-3: 12px;
-	--space-4: 16px;  --space-5: 20px;  --space-6: 24px;
-	--space-8: 32px;  --space-10: 40px; --space-12: 48px;
-	--space-16: 64px; --space-20: 80px; --space-24: 96px;
+	/* ── Espaciado (base 8px) ── */
+	--space-1:  4px;   --space-2:  8px;   --space-3:  12px;
+	--space-4:  16px;  --space-5:  20px;  --space-6:  24px;
+	--space-8:  32px;  --space-10: 40px;  --space-12: 48px;
+	--space-16: 64px;  --space-20: 80px;  --space-24: 96px;
 
-	/* Section rhythm (vertical padding) */
+	/* Ritmo de sección (padding vertical) */
 	--section-pad-sm: clamp(48px, 6vw, 72px);
 	--section-pad-md: clamp(64px, 8vw, 88px);
 	--section-pad-lg: clamp(72px, 9vw, 96px);
 
-	/* Radius */
+	/* ── Radios ── */
 	--radius-sm:   6px;
 	--radius-md:   12px;
 	--radius-lg:   20px;
 	--radius-xl:   28px;
 	--radius-full: 9999px;
 
-	/* ── Brand Palette ── */
-	/* Surface */
-	--color-bg-deep:       #0c0f1a;
-	--color-bg-base:       #141827;
-	--color-surface-base:  #191e31;
-	--color-text-secondary:#d4d8e4;
-	--color-accent-primary:#d6f47a;
+	/* ══════════════════════════════════════════════════════
+	   PALETA DE MARCA MINGAKO
+	   Extraída de la identidad visual: amarillo solar, verdes
+	   naturales, naranja tierra, textos oscuros casi-negros.
+	   ══════════════════════════════════════════════════════ */
 
-	/* Glow tokens semánticos reutilizables */
-	--glow-purple:         radial-gradient(ellipse at 50% 40%, rgba(215, 144, 240, 0.08) 0%, transparent 65%);
-	--glow-blue:           radial-gradient(ellipse at 50% 60%, rgba(100, 140, 255, 0.06) 0%, transparent 65%);
+	/* ── Fondos ── */
+	/* Amarillo solar cálido — color dominante de la marca */
+	--color-bg-base:      #F6E84C;   /* Amarillo Mingako principal */
+	--color-bg-soft:      #FAF0A0;   /* Versión más suave para secciones alternadas */
+	--color-bg-cream:     #FFFCE8;   /* Blanco-crema cálido para tarjetas/formularios */
+	--color-bg-deep:      #E8D93A;   /* Amarillo más saturado — fondos de énfasis */
 
-	/* Primary (Purple) */
-	--color-primary:       #d790f0;
-	--color-primary-hover: #dfa6f3;
-	--color-primary-glow:  rgba(218, 147, 255, 0.8);
-	--color-on-primary:    #191e31;
+	/* ── Superficies ── */
+	--color-surface-base: #FFFCE8;   /* Tarjetas y contenedores: crema cálida */
+	--color-surface-muted:#F5F0D0;   /* Superficies secundarias */
+	--color-surface-dark: #2C5F1A;   /* Superficies oscuras: verde bosque */
 
-	/* Card Pastels */
-	--color-card-green-1:  #effbca;
-	--color-card-green-2:  #e6f8af;
-	--color-card-green-3:  #effbca;
-	--color-card-purple:   #f7e9fc;
-	--color-card-warning:  #fdf1d3;
-	--color-card-blue:     #e0e7ff;
-	--color-card-blue-2:   #c8d9ff;  /* Azul periwinkle suave - PRD #002 */
-	--color-card-gray:     #ccd3df;
-	--color-card-salmon:   #fbd8d1;
+	/* ── Verde Primario (logo + UI principal) ── */
+	/* Verde bosque profundo — el color del logo y la identidad central */
+	--color-primary:       #2C5F1A;  /* Forest green — CTA texto, encabezados */
+	--color-primary-hover: #234D13;  /* Verde más oscuro al hover */
+	--color-primary-light: #4A8C2A;  /* Verde medio para estados interactivos */
+	--color-primary-glow:  rgba(44, 95, 26, 0.20);
+	--color-on-primary:    #FFFCE8;  /* Texto sobre fondo verde: crema */
 
-	/* Semantic Status — armonizados con el sistema OKLCH del proyecto */
-	/* Success: verde cercano al --color-accent-primary, más saturado para estado */
-	--color-success:       #7de87a;          /* ratio 4.8:1 sobre surface-base ✅ */
-	--color-success-bg:    rgba(125, 232, 122, 0.12);  /* fondo sutil para badges */
-	--color-success-border:rgba(125, 232, 122, 0.28);  /* borde success states */
-	--color-success-glow:  rgba(125, 232, 122, 0.35);  /* glow para iconos/check */
-	--color-on-success:    #0b1f0a;          /* texto oscuro sobre success — AAA */
-	--color-warning:       #f3ba25;
-	--color-warning-bg:    rgba(195, 149, 30, 0.2);
-	--color-error:         #ff6b6b;
-	--color-error-bg:      rgba(220, 53, 69, 0.15);
+	/* ── Acento Naranja (CTA principal) ── */
+	/* Naranja tierra cálido — botón "Notificarme" y acciones primarias */
+	--color-accent-primary:  #E8651A; /* Naranja Mingako */
+	--color-accent-hover:    #D45510; /* Naranja más oscuro al hover */
+	--color-accent-light:    #F5894A; /* Naranja claro para variantes */
+	--color-accent-subtle:   rgba(232, 101, 26, 0.12);
+	--color-on-accent:       #FFFCE8; /* Texto sobre naranja: crema */
 
-	/* Surface variants */
-	--color-surface-dark:  #0f121d;
-	--color-border-card:   rgba(255, 255, 255, 0.1);
-	--color-surface-tag:   rgba(255, 255, 255, 0.1);
+	/* ── Verde Oliva (subtítulo / labels de énfasis) ── */
+	/* Verde oliva vibrante — "Próximamente", badges, etiquetas verdes */
+	--color-label-green:   #87B42A;  /* Verde Mingako — labels tipo "Próximamente" */
+	--color-label-hover:   #6E9620;  /* Verde oscuro al hover */
 
-	/* Text semantic */
-	--color-text-muted:    #969fab;
-	--color-text-primary:  #eef0f6;
-	--color-border-outline: #949dbc;
+	/* ── Textos ── */
+	/* Texto principal: verde-negro muy oscuro (legible sobre amarillo) */
+	--color-text-primary:   #1A2E0A;  /* Verde oscuro casi negro */
+	--color-text-secondary: #3D5C1F;  /* Verde medio — párrafos, subtítulos */
+	--color-text-muted:     #7A9050;  /* Verde apagado — textos de soporte */
+	--color-text-on-dark:   #F6E84C;  /* Amarillo marca sobre fondos oscuros */
 
-	/* Tinted white — never use pure #fff */
-	--color-white: #eef0f6;
+	/* ── Bordes ── */
+	--color-border-base:    rgba(44, 95, 26, 0.18);   /* Verde sutil */
+	--color-border-strong:  rgba(44, 95, 26, 0.40);   /* Verde más visible */
+	--color-border-card:    rgba(44, 95, 26, 0.12);   /* Tarjetas */
+	--color-border-input:   #B8CC8A;                  /* Input fields */
+	--color-border-outline: #4A8C2A;                  /* Focus outline */
+
+	/* ── Tarjetas de color (para secciones de contenido) ── */
+	--color-card-yellow:    #F6E84C;  /* Amarillo primario */
+	--color-card-green:     #D6EDAA;  /* Verde pastel suave */
+	--color-card-green-dark:#B5D97A;  /* Verde pastel más saturado */
+	--color-card-orange:    #FDDBB0;  /* Naranja pastel */
+	--color-card-earth:     #E8D5A0;  /* Tierra/ocre claro */
+	--color-card-cream:     #FFFCE8;  /* Crema base */
+
+	/* ── Estados semánticos — armonizados con la paleta natural ── */
+	/* Success: verde natural vibrante */
+	--color-success:        #4CAF50;
+	--color-success-bg:     rgba(76, 175, 80, 0.12);
+	--color-success-border: rgba(76, 175, 80, 0.30);
+	--color-success-glow:   rgba(76, 175, 80, 0.25);
+	--color-on-success:     #1A2E0A;
+
+	/* Warning: ámbar cálido */
+	--color-warning:        #F5A623;
+	--color-warning-bg:     rgba(245, 166, 35, 0.15);
+
+	/* Error: rojo tierra */
+	--color-error:          #D94F3D;
+	--color-error-bg:       rgba(217, 79, 61, 0.12);
+
+	/* ── Alias semánticos de audit/utilidad ── */
+	--color-white:          #FFFCE8;  /* Nunca blanco puro — crema cálida */
 
 	/* ── Layout ── */
 	--content-max: 1128px;
 	--gutter: clamp(20px, 5vw, 156px);
 
 	/* ── Motion Tokens ── */
-	/* Easing — exponential curves (Impeccable standard) */
-	--ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);      /* entering */
-	--ease-in-expo:   cubic-bezier(0.7, 0, 0.84, 0);      /* leaving */
-	--ease-in-out:    cubic-bezier(0.65, 0, 0.35, 1);      /* state toggles */
+	/* Easing — curvas suaves, movimiento orgánico */
+	--ease-out-expo:  cubic-bezier(0.16, 1, 0.30, 1);   /* entrada */
+	--ease-in-expo:   cubic-bezier(0.70, 0, 0.84, 0);   /* salida */
+	--ease-in-out:    cubic-bezier(0.65, 0, 0.35, 1);   /* toggle de estado */
+	--ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);/* rebote suave — orgánico */
 
-	/* Durations (100/300/500 rule) */
-	--dur-instant: 100ms;     /* button press, toggle */
-	--dur-fast:    200ms;     /* hover, tooltip, color */
-	--dur-normal:  300ms;     /* menu, drawer, state */
-	--dur-slow:    500ms;     /* modal, layout change */
-	--dur-enter:   600ms;     /* entrance animation */
+	/* Duraciones (regla 100/300/500) */
+	--dur-instant: 100ms;   /* press de botón, toggle */
+	--dur-fast:    200ms;   /* hover, tooltip, color */
+	--dur-normal:  300ms;   /* menú, drawer, estado */
+	--dur-slow:    500ms;   /* modal, layout change */
+	--dur-enter:   600ms;   /* animación de entrada */
 }
 
 /* ─── OKLCH Palette (progressive enhancement) ────────────── */
+/* Mismos colores calibrados en espacio perceptual uniforme    */
 @supports (color: oklch(0.5 0.1 0)) {
 	:root {
-		--color-bg-deep:       oklch(0.12 0.02 265);
-		--color-bg-base:       oklch(0.16 0.025 265);
-		--color-surface-base:  oklch(0.19 0.027 264);
-		--color-text-secondary:oklch(0.87 0.012 265);
-		--color-accent-primary:oklch(0.92 0.16 125); /* Calibrated: P3 match for #D6F47A — hue 125 balances yellow-green shift */
-		/* --color-primary and --color-primary-hover intentionally NOT overridden here.
-		   Let the browser map #D790F0 (sRGB) → P3 natively. Any OKLCH override
-		   causes perceptual mismatch vs. the Figma design reference. */
-		--color-on-primary:    oklch(0.19 0.027 264);
-		--color-white:         oklch(0.96 0.008 265);
-		--color-text-muted:    oklch(0.70 0.015 265);
-		--color-text-primary:  oklch(0.96 0.008 265);
-		--color-surface-dark:  oklch(0.13 0.02 265);
-		/* Success — hue 135 (verde saturado, familia del accent) */
-		--color-success:       oklch(0.87 0.18 135);
-		--color-success-bg:    oklch(0.87 0.18 135 / 0.12);
-		--color-success-border:oklch(0.87 0.18 135 / 0.28);
-		--color-success-glow:  oklch(0.87 0.18 135 / 0.35);
-		--color-on-success:    oklch(0.14 0.06 135);
+		/* Amarillo solar Mingako — hue 95 (amarillo-verde cálido) */
+		--color-bg-base:       oklch(0.91 0.16  95);
+		--color-bg-soft:       oklch(0.95 0.10  95);
+		--color-bg-cream:      oklch(0.98 0.04  90);
+		--color-bg-deep:       oklch(0.88 0.18  95);
+		--color-surface-base:  oklch(0.98 0.04  90);
+		--color-surface-muted: oklch(0.94 0.08  95);
+
+		/* Verde bosque — hue 135 (verde saturado profundo) */
+		--color-primary:       oklch(0.40 0.12 135);
+		--color-primary-hover: oklch(0.34 0.11 135);
+		--color-primary-light: oklch(0.52 0.14 135);
+		--color-primary-glow:  oklch(0.40 0.12 135 / 0.20);
+		--color-on-primary:    oklch(0.98 0.04  90);
+		--color-surface-dark:  oklch(0.40 0.12 135);
+
+		/* Naranja tierra — hue 45 (naranja cálido) */
+		--color-accent-primary: oklch(0.64 0.17  45);
+		--color-accent-hover:   oklch(0.58 0.16  45);
+		--color-accent-light:   oklch(0.72 0.14  45);
+		--color-accent-subtle:  oklch(0.64 0.17  45 / 0.12);
+		--color-on-accent:      oklch(0.98 0.04  90);
+
+		/* Verde Mingako #87B42A — hue 122 */
+		--color-label-green:   oklch(0.67 0.15 122);
+		--color-label-hover:   oklch(0.59 0.14 122);
+
+		/* Textos */
+		--color-text-primary:  oklch(0.24 0.07 135);
+		--color-text-secondary:oklch(0.38 0.09 135);
+		--color-text-muted:    oklch(0.60 0.07 125);
+		--color-text-on-dark:  oklch(0.91 0.16  95);
+
+		/* Borders */
+		--color-border-input:  oklch(0.78 0.09 125);
+		--color-border-outline:oklch(0.52 0.14 135);
+
+		/* Semánticos */
+		--color-success:       oklch(0.62 0.15 140);
+		--color-success-bg:    oklch(0.62 0.15 140 / 0.12);
+		--color-success-border:oklch(0.62 0.15 140 / 0.30);
+		--color-success-glow:  oklch(0.62 0.15 140 / 0.25);
+		--color-on-success:    oklch(0.24 0.07 135);
+
+		--color-warning:       oklch(0.75 0.14  60);
+		--color-warning-bg:    oklch(0.75 0.14  60 / 0.15);
+
+		--color-error:         oklch(0.58 0.16  25);
+		--color-error-bg:      oklch(0.58 0.16  25 / 0.12);
+
+		--color-white:         oklch(0.98 0.04  90);
 	}
 }
 
@@ -145,24 +206,24 @@ html {
 	-webkit-font-smoothing: antialiased;
 	font-kerning: normal;
 	font-optical-sizing: auto;
-	/* ─── Audit Page Aliases ─────────────────────────────────── */
-	--color-audit-bg:      var(--color-bg-base);       /* #141827 */
-	--color-audit-surface: var(--color-surface-base);  /* #191e31 */
-	--color-audit-fg:      var(--color-text-primary);  /* #eef0f6 */
-	--color-audit-accent:  var(--color-accent-primary);/* #d6f47a */
+
+	/* ── Alias de utilidad ──────────────────────────────── */
+	--color-audit-bg:      var(--color-bg-base);
+	--color-audit-surface: var(--color-surface-base);
+	--color-audit-fg:      var(--color-text-primary);
+	--color-audit-accent:  var(--color-accent-primary);
 }
 
 body {
 	background: var(--color-bg-base);
-	color: var(--color-text-secondary);
+	color: var(--color-text-primary);
 	min-height: 100vh;
-	/* Light-on-dark compensation: +0.05 line-height, subtle tracking */
-	line-height: 1.55;
+	line-height: 1.6;
 	letter-spacing: 0.01em;
 }
 
-/* ─── Typography Polish ─────────────────────────────────── */
-h1, h2, h3, h4 { text-wrap: balance; }
+/* ─── Tipografía ─────────────────────────────────────────── */
+h1, h2, h3, h4 { text-wrap: balance; font-family: var(--font-headline); }
 article p, .prose p { text-wrap: pretty; }
 
 img, video, svg { display: block; max-width: 100%; }
@@ -179,12 +240,12 @@ button, a, input, select, textarea { touch-action: manipulation; }
 }
 
 /* ─── Scroll Reveal Animations ──────────────────────────── */
-/* Elements start hidden; `.revealed` is added by IntersectionObserver */
+/* Los elementos comienzan ocultos; `.revealed` lo añade IntersectionObserver */
 .reveal-fade-up {
 	opacity: 0;
 	transform: translateY(24px);
 	transition:
-		opacity var(--dur-enter) var(--ease-out-expo),
+		opacity   var(--dur-enter) var(--ease-out-expo),
 		transform var(--dur-enter) var(--ease-out-expo);
 }
 
@@ -193,9 +254,9 @@ button, a, input, select, textarea { touch-action: manipulation; }
 	transform: translateY(0);
 }
 
-/* Stagger children inside a parent that has .stagger-children */
-.stagger-children > .reveal-fade-up:nth-child(1) { transition-delay: 0ms; }
-.stagger-children > .reveal-fade-up:nth-child(2) { transition-delay: 80ms; }
+/* Escalonado de hijos dentro de un padre .stagger-children */
+.stagger-children > .reveal-fade-up:nth-child(1) { transition-delay:   0ms; }
+.stagger-children > .reveal-fade-up:nth-child(2) { transition-delay:  80ms; }
 .stagger-children > .reveal-fade-up:nth-child(3) { transition-delay: 160ms; }
 .stagger-children > .reveal-fade-up:nth-child(4) { transition-delay: 240ms; }
 .stagger-children > .reveal-fade-up:nth-child(5) { transition-delay: 320ms; }
@@ -213,4 +274,3 @@ button, a, input, select, textarea { touch-action: manipulation; }
 		transform: none !important;
 	}
 }
-

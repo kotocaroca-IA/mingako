@@ -1,0 +1,566 @@
+/* ==========================================================================
+   MINGAKO - STYLE SYSTEM (Vanilla CSS)
+   ========================================================================== */
+
+/* Design Tokens & Theme Variables */
+:root {
+  /* Color Palette */
+  --color-primary: #87b42a;       /* Green Accent */
+  --color-primary-dark: #6a911f;
+  --color-text-main: #2f4335;     /* Dark Green Forest */
+  --color-text-muted: #4e6555;
+  --color-accent: #d77017;        /* Eco-Orange/Clay */
+  --color-accent-hover: #b85d10;
+  --color-white: #ffffff;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  
+  /* Shadow Systems */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(47, 67, 53, 0.08), 0 2px 4px -2px rgba(47, 67, 53, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(47, 67, 53, 0.12), 0 4px 6px -4px rgba(47, 67, 53, 0.12);
+  --shadow-input-focus: 0 0 0 3px rgba(135, 180, 42, 0.2);
+  --shadow-btn-focus: 0 0 0 3px rgba(215, 112, 23, 0.35);
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Space Grotesk', var(--font-sans);
+
+  /* Easing */
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base Rules */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-sans);
+  color: var(--color-text-main);
+  background-color: #f6eeb7; /* Warm base background matching Figma sky */
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page Container (Figma Desktop - 1) */
+.page-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1.5rem;
+  background-image: url('/assets/background.webp');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+
+
+/* Main Content Wrapper */
+.content-wrapper {
+  width: 100%;
+  max-width: 680px;
+  margin-top: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+/* Logo Header */
+.logo-header {
+  margin-bottom: 68px; /* Gap between logo and central column top */
+  animation: fadeInDown 1s var(--ease-smooth) both;
+}
+
+.logo-img {
+  width: 199px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 199 / 69;
+  display: block;
+  transition: transform 0.4s var(--ease-out-back);
+}
+
+.logo-img:hover {
+  transform: scale(1.03);
+}
+
+/* Central Under Construction Panel */
+.panel-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 34px; /* Gap between core content block and social footer */
+  animation: fadeInUp 1.2s var(--ease-out-back) both;
+}
+
+.panel-headings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.3px; /* Gap between 'Próximamente' and Title */
+  margin-bottom: 0;
+}
+
+/* Status / Headings */
+.status-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(18px, 2.2vw, 24px);
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.main-title {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.0;
+  color: var(--color-text-main);
+  letter-spacing: -0.02em;
+}
+
+/* Newsletter Section */
+.newsletter-container {
+  width: 100%;
+  max-width: 531px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15.8px;
+  margin-bottom: 0;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.newsletter-sub {
+  font-size: clamp(13.8px, 1.8vw, 15px);
+  font-weight: 500;
+  color: var(--color-text-main);
+  line-height: 1.15;
+  margin-bottom: 0;
+  text-wrap: balance;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.input-wrapper {
+  width: 245px;
+  flex: none;
+  position: relative;
+  text-align: left;
+}
+
+#emailInput {
+  width: 100%;
+  height: 38px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-slate-300);
+  border-radius: 6px;
+  padding: 0 12px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-text-main);
+  outline: none;
+  box-shadow: none;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+#emailInput::placeholder {
+  color: var(--color-slate-400);
+}
+
+#emailInput:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-input-focus);
+}
+
+/* Error message styling */
+.error-msg {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  display: block;
+  font-size: 12px;
+  color: #c2410c;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.3s var(--ease-smooth);
+  white-space: nowrap;
+}
+
+.error-msg.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button */
+.btn-submit {
+  height: 38px;
+  min-width: 120px;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  border-radius: 6px;
+  padding: 0 24px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s var(--ease-out-back);
+}
+
+.btn-submit::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.75s;
+  opacity: 0;
+}
+
+.btn-submit:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px) scale(1.02);
+}
+
+.btn-submit:hover::after {
+  left: 125%;
+  opacity: 1;
+  transition: all 0.75s ease;
+}
+
+.btn-submit:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-submit:focus {
+  outline: none;
+}
+
+/* Success Card (Fades in) */
+.success-container {
+  display: none;
+  width: 100%;
+  max-width: 530px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 8px 0;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  animation: scaleIn 0.6s var(--ease-out-back) both;
+}
+
+.success-check {
+  font-size: 28px;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+  display: block;
+  animation: popIcon 0.5s var(--ease-out-back) both;
+}
+
+.success-text {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(13px, 1.8vw, 15px);
+  color: var(--color-text-main);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.success-reset {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(11px, 1.4vw, 13px);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color 0.2s var(--ease-smooth);
+  margin-top: 2px;
+}
+
+.success-reset:hover {
+  color: var(--color-primary);
+}
+
+/* Social Links Footer */
+.social-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 33px; /* 33.157px gap from Figma */
+  margin-top: 0;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.4s var(--ease-out-back);
+}
+
+.social-link:hover {
+  transform: translateY(-3px) scale(1.08);
+}
+
+.social-icon {
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(47, 67, 53, 0.1));
+  transition: filter 0.3s ease;
+}
+
+.social-link[aria-label*="Instagram"] .social-icon,
+.social-link[aria-label*="Facebook"] .social-icon {
+  width: 29px;
+  height: 29px;
+}
+
+.social-link[aria-label*="YouTube"] .social-icon {
+  width: 37px;
+  height: 37px;
+}
+
+.social-link:hover .social-icon {
+  filter: drop-shadow(0 4px 8px rgba(135, 180, 42, 0.3)) brightness(1.03);
+}
+
+/* Green Hosting Footnote Badge */
+.hosting-badge {
+  position: absolute;
+  right: 4%;
+  bottom: 4%;
+  z-index: 5;
+  transition: all 0.4s var(--ease-smooth);
+}
+
+.hosting-img {
+  width: clamp(140px, 14vw, 190px);
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s var(--ease-smooth);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hosting-badge:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.hosting-badge:hover .hosting-img {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(135, 180, 42, 0.3);
+}
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes popIcon {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Form submitting loader */
+.btn-loader {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--color-white);
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-submit.loading .btn-text {
+  display: none;
+}
+
+.btn-submit.loading .btn-loader {
+  display: block;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (Responsive Adaptations)
+   ========================================================================== */
+
+/* Tablet Optimization */
+@media (max-width: 768px) {
+  .page-container {
+    background-position: 45% bottom;
+    padding: 1.5rem 1.5rem;
+    justify-content: flex-start;
+  }
+  
+
+
+  .hosting-badge {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin-top: 3rem;
+    align-self: center;
+  }
+}
+
+/* Mobile Small Devices */
+@media (max-width: 480px) {
+  .page-container {
+    background-position: 43% bottom;
+    padding: 1rem 1rem;
+  }
+
+  .logo-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .status-badge {
+    font-size: 17px;
+  }
+
+  .main-title {
+    font-size: 30px;
+  }
+
+  .newsletter-sub {
+    font-size: 16.5px;
+    padding: 0 10px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 250px;
+  }
+
+  .input-wrapper {
+    width: 100%;
+  }
+
+  #emailInput {
+    height: 42px;
+    text-align: center;
+  }
+
+  .btn-submit {
+    height: 42px;
+    width: 100%;
+  }
+
+  .social-footer {
+    gap: 24px;
+  }
+
+  .hosting-badge {
+    margin-top: 2rem;
+  }
+}

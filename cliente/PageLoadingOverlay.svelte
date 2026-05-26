@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { navigating } from "$app/stores";
-	import logoCiclo from "./assets/Logo-Ciclo17.svg?raw";
+	import logoMingako from "./assets/logo-mingako.svg?raw";
 	import { fade } from "svelte/transition";
 </script>
 
@@ -9,7 +9,7 @@
 		<div class="progress-bar"></div>
 		<div class="logo-wrapper">
 			<div class="logo-pulse">
-				{@html logoCiclo}
+				{@html logoMingako}
 			</div>
 			<div class="loading-text">Cargando experiencia...</div>
 		</div>
