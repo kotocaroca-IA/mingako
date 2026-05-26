@@ -138,63 +138,7 @@
 	--dur-enter:   600ms;   /* animación de entrada */
 }
 
-/* ─── OKLCH Palette (progressive enhancement) ────────────── */
-/* Mismos colores calibrados en espacio perceptual uniforme    */
-@supports (color: oklch(0.5 0.1 0)) {
-	:root {
-		/* Amarillo solar Mingako — hue 95 (amarillo-verde cálido) */
-		--color-bg-base:       oklch(0.91 0.16  95);
-		--color-bg-soft:       oklch(0.95 0.10  95);
-		--color-bg-cream:      oklch(0.98 0.04  90);
-		--color-bg-deep:       oklch(0.88 0.18  95);
-		--color-surface-base:  oklch(0.98 0.04  90);
-		--color-surface-muted: oklch(0.94 0.08  95);
 
-		/* Verde bosque — hue 135 (verde saturado profundo) */
-		--color-primary:       oklch(0.40 0.12 135);
-		--color-primary-hover: oklch(0.34 0.11 135);
-		--color-primary-light: oklch(0.52 0.14 135);
-		--color-primary-glow:  oklch(0.40 0.12 135 / 0.20);
-		--color-on-primary:    oklch(0.98 0.04  90);
-		--color-surface-dark:  oklch(0.40 0.12 135);
-
-		/* Naranja tierra — hue 45 (naranja cálido) */
-		--color-accent-primary: oklch(0.64 0.17  45);
-		--color-accent-hover:   oklch(0.58 0.16  45);
-		--color-accent-light:   oklch(0.72 0.14  45);
-		--color-accent-subtle:  oklch(0.64 0.17  45 / 0.12);
-		--color-on-accent:      oklch(0.98 0.04  90);
-
-		/* Verde Mingako #87B42A — hue 122 */
-		--color-label-green:   oklch(0.67 0.15 122);
-		--color-label-hover:   oklch(0.59 0.14 122);
-
-		/* Textos */
-		--color-text-primary:  oklch(0.24 0.07 135);
-		--color-text-secondary:oklch(0.38 0.09 135);
-		--color-text-muted:    oklch(0.60 0.07 125);
-		--color-text-on-dark:  oklch(0.91 0.16  95);
-
-		/* Borders */
-		--color-border-input:  oklch(0.78 0.09 125);
-		--color-border-outline:oklch(0.52 0.14 135);
-
-		/* Semánticos */
-		--color-success:       oklch(0.62 0.15 140);
-		--color-success-bg:    oklch(0.62 0.15 140 / 0.12);
-		--color-success-border:oklch(0.62 0.15 140 / 0.30);
-		--color-success-glow:  oklch(0.62 0.15 140 / 0.25);
-		--color-on-success:    oklch(0.24 0.07 135);
-
-		--color-warning:       oklch(0.75 0.14  60);
-		--color-warning-bg:    oklch(0.75 0.14  60 / 0.15);
-
-		--color-error:         oklch(0.58 0.16  25);
-		--color-error-bg:      oklch(0.58 0.16  25 / 0.12);
-
-		--color-white:         oklch(0.98 0.04  90);
-	}
-}
 
 /* ─── Base Reset ─────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
